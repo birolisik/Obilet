@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - test.SIL</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/jqueryui-datepicker/jquery-ui.css" />
+</head>
+<body>
+
+    <div class="container-obilet">
+
+        <header class="bg-primary p-3">
+            @await RenderSectionAsync("Header", required: false)
+        </header>
+        <main class="d-flex flex-column p-3">
+            @RenderBody()
+        </main>
+        <footer class="d-flex flex-column p-3 small text-secondary bg-white border-bottom">
+            @await RenderSectionAsync("Footer", required: false)
+        </footer>
+    </div>
+
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/jqueryui-datepicker/jquery-ui.js" asp-append-version="true"></script>
+    <script src="~/lib/jqueryui-datepicker/datepicker-tr.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <script>
+       
+        (function () {
+            $(".field-validation-error").after("<br/>");
+        })();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+.select-loop {
+    position: relative
+}
+
+    .select-loop input {
+        cursor: pointer
+    }
+
+    .select-loop .location-list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        right: 0;
+        border-top: 1px solid #f3f3f3;
+        box-shadow: 0px 10px 20px -4px rgb(94 94 94 / 41%);
+        display: none;
+        z-index: 999;
+    }
+
+    .select-loop.visible .location-list {
+        display: block;
+    }
+
+    .select-loop .location-list div {
+        float: left;
+        width: 100%;
+        padding: 0.5rem 1rem;
+        cursor: pointer
+    }
+
+        .select-loop .location-list div:hover {
+            background: #2f4eb417;
+        }
+
+.text-primary {
+    color: #2F4EB4 !important
+}
+
+.btn-primary {
+    background-color: #2F4EB4;
+    border-color: #2F4EB4;
+}
+
+.listItem {
+    background: linear-gradient(261deg, #edededad, #fff, #edededad );
+    border: 1px solid #b4b4b475 !important;
+    border-radius: 5px;
+}
+
+.input-noborder {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important
+}
+
+select.input-noborder {
+    margin-left: -3px
+}
+
+.select-calender .active {
+    color: #fff;
+    background: #6c757d;
+}
+
+.btn-xs {
+    padding: 0.25rem 0.5rem;
+    font-size: .830rem;
+    line-height: 1;
+    border-radius: 0.2rem;
+}
+.bg-primary {
+    background-color: #2F4EB4 !important;
+}
+
+body {
+    font-size: 15px;
+}
+
+.font-family-opensans {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container-obilet {
+    width: 320px;
+    margin: 0 auto;
+    background: #F8F8F8b5;
+}
+
+main, footer {
+    border: 1px solid #d7d4d4;
+    border-top: 0;
+    border-bottom: 0;
+}
+
+.small70 {
+    font-size: 70%;
+}
+
+.small90 {
+    font-size: 90%;
+}
+
+.large {
+    font-size: 110%;
+}
+

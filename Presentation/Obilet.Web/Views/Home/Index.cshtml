@@ -1,0 +1,64 @@
+﻿@using Obilet.Application.ViewModels;
+@using System.Globalization;
+@model VM_BusLocation
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form method="get" asp-action="Index" asp-controller="Journey">
+    <span asp-validation-for="Origin" class="text-danger"> </span>
+    <span asp-validation-for="Destination" class="text-danger"></span>
+    <span asp-validation-for="OriginId" class="text-danger"></span>
+    <span asp-validation-for="DepartureDate" class="text-danger"></span>
+    <div id="location-change">
+        <div id="select-origin" class="d-flex flex-row align-items-end bg-white select-loop" >
+            <div class="ps-1 pe-1 pb-3 pt-0"> <img src="/img/img3.png" /> </div>
+            <div class="p-2 d-flex flex-column w-100">
+                <span class="text-primary">Nereden</span>
+                <input type="hidden" class="select-value" asp-for="OriginId"/>
+                <input class="input-noborder d-block mt-1 pt-1 pb-1 select-text" asp-for="Origin" readonly  autocomplete="off" />
+
+                <div class="location-list" >
+                </div>
+            </div>
+        </div>
+        <div class="d-flex mb-1 justify-content-end position-relative location-change"> <a href='javascript:;' class="position-absolute bg-white rounded-circle ps-2 pt-1 pb-1 pe-2 me-3 border" style="top:-15px;z-index:9"> <img src="/img/img1.png" /> </a>    </div>
+        <div id="select-destination" class="d-flex flex-row align-items-end bg-white select-loop">
+            <div class="ps-1 pe-1 pb-3 pt-0"> <img src="/img/img3.png" /> </div>
+            <div class="p-2 d-flex flex-column w-100 ">
+                <span class="text-primary">Nereye</span>
+                <input type="hidden" class="select-value" asp-for="DestinationId"/>
+                <input class="input-noborder d-block mt-1 pt-1 pb-1 select-text" asp-for="Destination" readonly  autocomplete="off" />
+
+                <div class="location-list" >
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex mb-4"></div>
+    <div class="d-flex flex-row bg-white select-calender">
+        <div class="ps-1 pe-1 pb-4 pt-0 d-flex align-items-end"> <img src="/img/img2.png" /> </div>
+        <div class="p-2 d-flex flex-column mr-auto">
+            <span class="text-primary">Tarih</span>
+            <input type="hidden" asp-for="DepartureDate" id="hidden-date" value="@Model.DepartureDate.ToString("yyyy-MM-dd")" />
+            <input id="select-date" type="text" value="@Model.DepartureDate.ToString("dd MMMM yyyy dddd", new CultureInfo("tr-TR"))" class="input-noborder  pt-1 pb-1 w-100" readonly />
+
+        </div>
+        <div class="p-2 d-flex flex-column">
+            <a id="select-today" href="javascript:;" class="btn btn-xs btn-outline-secondary active mb-2" >Bugün</a>
+            <a id="select-tomorrow" href="javascript:;" class="btn btn-xs btn-outline-secondary" >Yarın</a>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <button type="submit" class="btn btn-primary w-75">Bileti Bul</button>
+    </div>
+
+</form>
+
+@section Footer
+    {
+    <div>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio qui blandit praesent luptatum
+    </div>
+}

@@ -1,0 +1,46 @@
+﻿@using Obilet.Application.Models.BusJourneys;
+@model BusJourneyResponse;
+<div class="d-flex flex-column font-family-opensans">
+    @foreach (var item in Model.JourneyData)
+    {
+        <div class="d-flex flex-column p-2 mb-2 listItem position-relative">
+            <div class="d-flex justify-content-between">
+                <div class="d-flex text-primary">
+                    <div class="d-flex flex-column text-center pe-2">
+                        <span class="small70">KALKIŞ</span>
+                        <span class="large fw-bold"> @Convert.ToDateTime(item.Journey.Departure).ToString("hh:mm") </span>
+                    </div>
+                    <div class="d-flex mb-1  align-items-end">
+                        <img src="img/img5.png" />
+                    </div>
+                    <div class="d-flex flex-column text-center ps-2">
+                        <span class="small70">VARIŞ</span>
+                        <span class="large fw-bold"> @Convert.ToDateTime(item.Journey.Arrival).ToString("hh:mm") </span>
+                    </div>
+                </div>
+                <div>
+                    <span class="d-flex badge bg-danger fw-normal small90  ps-3 pe-3 p-2">
+                        @item.Journey.internetprice.ToString("#.00") @item.Journey.Currency
+                    </span>
+                </div>
+            </div>
+            <div class="text-left d-flex text-secondary fw-normal mt-1 small90">
+                @item.Journey.Origin - @item.Journey.Destination
+            </div>
+        </div>
+    }
+</div>
+
+
+
+
+@section Header
+    {
+    <div class="d-flex flex-row p-0 font-family-opensans">
+        <a href="/" class="ps-2 pe-2 me-3 text-white"> <img src="img/img4.png" /> </a>
+        <div class="text-left text-white font-weight-normal d-flex flex-column w-100">
+            <span> @ViewBag.Origin - @ViewBag.Destination </span>
+            <span class="small90 mt-1"> @ViewBag.HeaderDate </span>
+        </div>
+    </div>
+        }
