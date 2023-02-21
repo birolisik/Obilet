@@ -20,8 +20,8 @@ namespace Obilet.Infrastructure.Repositories.ServiceApi
 
         public async Task<Response> Get<Response, Request>(Request request, string url)
         {
-            using HttpClient httpClient = _factory.CreateClient("obilet");
-            using HttpResponseMessage respo = await httpClient.PostAsJsonAsync(url, request);
+             HttpClient httpClient = _factory.CreateClient("obilet");
+             HttpResponseMessage respo = await httpClient.PostAsJsonAsync(url, request);
             return JsonSerializer.Deserialize<Response>(await respo.Content.ReadAsStringAsync());
 
         }

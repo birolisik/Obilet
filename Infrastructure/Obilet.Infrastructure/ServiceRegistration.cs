@@ -34,7 +34,7 @@ namespace Obilet.Infrastructure
                 httpClient.BaseAddress = new Uri("https://v2-api.obilet.com/api/");
                 httpClient.DefaultRequestHeaders.Add("Authorization", "Basic JEcYcEMyantZV095WVc3G2JtVjNZbWx1");
             });
-            services.AddSingleton<ICookieManager, CookieManager>();
+            services.AddScoped<ICookieManager, CookieManager>();
             services.AddScoped<ISessionRepository<SessionResponse>,SessionRepositories>();
             services.AddScoped<IServiceApiRepository,ServiceApiRepository>();
             services.AddScoped<IBusLocationRepository, BusLocationRepositories>();
